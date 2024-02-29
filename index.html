@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Page</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #galaxy-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        #galaxy {
+            width: 300%;
+            height: 300%;
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            animation: galaxyMove 100s linear infinite;
+        }
+        @keyframes galaxyMove {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        audio {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="galaxy-container">
+        <video id="galaxy" autoplay muted loop>
+            <source src="galaxy.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="content">
+            <h1>Welcome to the Galaxy</h1>
+            <p>Explore the depths of space...</p>
+            <audio controls autoplay loop>
+                <source src="muziek.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</body>
+</html>
