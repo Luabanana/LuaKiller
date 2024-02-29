@@ -50,9 +50,6 @@
             height: 100%;
             z-index: 2;
         }
-        audio {
-            display: none; /* Verberg de audioplayer */
-        }
     </style>
 </head>
 <body>
@@ -62,7 +59,7 @@
         <!-- Overlay om YouTube-logo en afspeelknop te verbergen -->
         <div id="youtube-video-overlay"></div>
         <!-- HTML5 Audio Player voor de muziek -->
-        <audio autoplay loop>
+        <audio id="background-music" autoplay loop>
             <source src="muziek.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -71,5 +68,25 @@
             <p>Explore the depths of space...</p>
         </div>
     </div>
+
+    <script>
+        // YouTube Video API
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-video', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                player.seekTo(0);
+                player.playVideo();
+            }
+        }
+    </script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
