@@ -20,22 +20,6 @@
             overflow: hidden;
             position: relative;
         }
-        #galaxy {
-            width: 300%;
-            height: 300%;
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            animation: galaxyMove 100s linear infinite;
-        }
-        @keyframes galaxyMove {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
         #content {
             position: absolute;
             top: 50%;
@@ -52,23 +36,22 @@
             margin-bottom: 30px;
         }
         audio {
-            margin-top: 50px;
+            display: none; /* Verberg de audioplayer */
         }
     </style>
 </head>
 <body>
     <div id="galaxy-container">
-        <video id="galaxy" autoplay muted loop>
-            <source src="galaxy.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- YouTube Video Embed -->
+        <iframe id="youtube-video" width="100%" height="100%" src="https://www.youtube.com/embed/m-qemG-aNFM?autoplay=1&loop=1&controls=0&playlist=m-qemG-aNFM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- HTML5 Audio Player voor de muziek -->
+        <audio autoplay loop>
+            <source src="muziek.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
         <div id="content">
             <h1>Welcome to the Galaxy</h1>
             <p>Explore the depths of space...</p>
-            <audio controls autoplay loop>
-                <source src="muziek.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
         </div>
     </div>
 </body>
