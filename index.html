@@ -35,6 +35,21 @@
             font-size: 1.2em;
             margin-bottom: 30px;
         }
+        #youtube-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #youtube-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
         audio {
             display: none; /* Verberg de audioplayer */
         }
@@ -43,7 +58,9 @@
 <body>
     <div id="galaxy-container">
         <!-- YouTube Video Embed -->
-        <iframe id="youtube-video" width="100%" height="100%" src="https://www.youtube.com/embed/m-qemG-aNFM?autoplay=1&loop=1&controls=0&playlist=m-qemG-aNFM&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="youtube-video" src="https://www.youtube.com/embed/m-qemG-aNFM?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&autohide=1&disablekb=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- Overlay om YouTube-logo en afspeelknop te verbergen -->
+        <div id="youtube-video-overlay"></div>
         <!-- HTML5 Audio Player voor de muziek -->
         <audio autoplay loop>
             <source src="muziek.mp3" type="audio/mpeg">
